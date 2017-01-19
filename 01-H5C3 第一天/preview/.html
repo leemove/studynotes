@@ -1,0 +1,144 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="h5-">H5中的进度条</h1>
+<p>##自带的进度条</p>
+<pre><code>&gt;因为在不同的浏览器中进度条的样式不同 所以在开发中很少使用这两种进度条只进行简单的介绍
+</code></pre><pre><code class="lang-html">&lt;h2&gt;进度条1&lt;/h2&gt;
+  &lt;meter value=&quot;.5&quot;&gt;&lt;/meter&gt;
+  &lt;h2&gt;进度条2&lt;/h2&gt;
+  &lt;!-- progress 如果要显示 百分比的精度 需要设置 value 跟max  --&gt;
+  &lt;progress value=&quot;50&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+</code></pre>
+<p>##自定义的进度条</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;style&gt;
+    .progress{
+      border: 1px solid #000;
+      height: 30px;
+      width:200px;
+    }
+    .step{
+      height: 100%;
+      width:50%;
+      background-color: hotpink;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;自定义进度条&lt;/h1&gt;
+  &lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;step&quot; id=&#39;step&#39;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;input type=&quot;range&quot; id=&#39;range&#39; &gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>###自定义进度条的小案例 随着滑块移动 改变进度条</p>
+<pre><code class="lang-javascript">// 先获取需要修改的dom元素
+  var stepDom = document.getElementById(&#39;step&#39;);
+
+  // 滑动滑块 会一直触发
+  document.getElementById(&#39;range&#39;).oninput = function(){
+    var value = this.value;
+     // 超过了 50 变黄
+     if(value&gt;50){
+       stepDom.style.backgroundColor =&#39;yellow&#39;;
+     }else{
+       // 小于50变绿
+       stepDom.style.backgroundColor =&#39;green&#39;;
+     }
+    // 修改进度条的 width属性 
+    stepDom.style.width = value +&#39;%&#39;;
+  }
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

@@ -1,0 +1,190 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:04-box-sizing属性</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="c3box-sizing-">C3box-sizing属性</h1>
+<blockquote>
+<p>这个属性只有两个值，分别是border-box,content-box;</p>
+<h2 id="-">属性值的介绍</h2>
+<ul>
+<li>border-box属性是指，给当前盒子设定的宽度高度包括了Border 也就是如果宽度设置为50px，有1bpx的border那么会将盒子的宽度改成48px。类似border属性的还有padding属性。都不会将盒子撑大。</li>
+<li>content-box 默认值，也就是给当前盒子设置的宽高对应的是内容的宽高。
+##用border-sizing属性来修改简易日历。
+```html
+&lt;!DOCTYPE html&gt;<html lang="en">
+
+</li>
+</ul>
+</blockquote>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      margin: 100px auto;
+      padding: 0;
+      width: 420px;
+      background-color: hotpink;
+      overflow: hidden;
+    }
+
+    li {
+      width: 60px;
+      height: 60px;
+      /<em>border: 1px solid gray;</em>/
+      border-top:1px solid gray;
+      border-left: 1px solid gray;
+      float: left;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+      font-family: &quot;微软雅黑&quot;;
+
+      /<em> 设置盒子模型属性
+          保证 元素 自身的尺寸 不变 
+          通过压缩内容来实现
+       </em>/
+      box-sizing: border-box;
+    }
+
+    li:nth-child(7n){
+      border-right: 1px solid gray;
+    }
+    li:nth-child(n+22){
+      border-bottom: 1px solid gray;
+    }
+    li:nth-child(n+29){
+      border-top:none;
+    }
+    li:nth-last-child(1){
+      border-right: 1px solid gray;
+      width: 61px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li>17</li>
+    <li>18</li>
+    <li>19</li>
+    <li>20</li>
+    <li>21</li>
+    <li>22</li>
+    <li>23</li>
+    <li>24</li>
+    <li>25</li>
+    <li>26</li>
+    <li>27</li>
+    <li>28</li>
+    <li>29</li>
+    <li>30</li>
+    <li>31</li>
+  </ul>
+</body>
+
+<p></html>
+```</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
